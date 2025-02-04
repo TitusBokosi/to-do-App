@@ -1,11 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { watchFile } = require('fs');
 
 
 module.exports = {
-    mode: 'development',
-    entry: './src/index.js',
+    entry: {
+        app: './src/index.js',
+    },
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),  
@@ -14,9 +14,9 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/home.html',
+          title: 'Production',
         }),
-    ],
+      ],
     module: {
         rules: [
             {
@@ -33,8 +33,5 @@ module.exports = {
             },
         ],
     },
-    devtool: 'eval-source-map',
-    devServer: {
-        watchFiles: ['./src/home.html'],
-    },
+   
 };
