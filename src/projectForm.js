@@ -61,7 +61,7 @@ function createProjectForm(display, projects){
     submit.textContent = 'create project';
     form.appendChild(submit);
     
-    submit.addEventListener('submit', (event) => {
+    submit.addEventListener('click', (event) => {
         event.preventDefault();
         const project = createProject(name.value, description.value, date.value);
         addProjectButton(project);

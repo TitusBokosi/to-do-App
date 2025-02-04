@@ -4,8 +4,6 @@ import { createProjectForm } from './projectForm.js';
 import { displayProjectButton } from './displayProjectButton.js';
 
 
-const project =  createProject('Project One');
-console.log(project.name);
 const body = document.querySelector('body');
 const bodyContainer = document.createElement('div');
 bodyContainer.id = 'body-container';
@@ -44,7 +42,7 @@ projectListAddButton.id = 'project-list-add-button';
 projectListAddButton.textContent = '+';
 projectListHeadingContainer.appendChild(projectListAddButton);
 
- const projects = document.createElement('div');
+const projects = document.createElement('div');
 projects.id = 'projects';
 projectList.appendChild(projects);
 
