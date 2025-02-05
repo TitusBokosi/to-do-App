@@ -59,14 +59,14 @@
     width: 100%;
     flex-direction: column;
 }
-#project-list-add-button{
+button{
 
-    background: none;
+    background: white;
     border: none;
-    color: white;
+    color: #333;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
 }
-#project-button{
-    background-color: red;
-}
+

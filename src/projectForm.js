@@ -62,11 +62,11 @@ function createProjectForm(display, projects){
     form.appendChild(submit);
     
     submit.addEventListener('click', (event) => {
+        display.innerHTML = '';
         event.preventDefault();
         const project = createProject(name.value, description.value, date.value);
         addProjectButton(project);
-        displayProjectButton(projects);
-        form.reset();
+        displayProjectButton(projects, display);
     });
 }
 export {createProjectForm};

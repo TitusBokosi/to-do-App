@@ -1,6 +1,6 @@
-export const projectButton = [];
+export const projectArray = [];
 
 function addProjectButton(project) {
-  projectButton.push(project);
+  projectArray.push(project);
 }
 export {addProjectButton};
