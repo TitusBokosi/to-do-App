@@ -1,5 +1,6 @@
 import { projectArray } from "./projectButton";
 import { displayProjectButton } from "./displayProjectButton";
+import { toDoForm } from "./toDo.Form";
 
 export function logProject(project, display, projects){
     display.innerHTML = '';
@@ -18,6 +19,9 @@ export function logProject(project, display, projects){
     const projectDueDate = document.createElement('p');
     projectDueDate.textContent = project.dueDate;
     projectContainer.appendChild(projectDueDate);
+
+    const toDoContainer = document.createElement('div');
+    projectContainer.appendChild(toDoContainer);
 
     const actionButtons = document.createElement('div');
     actionButtons.id = 'action-buttons';
@@ -40,6 +44,10 @@ export function logProject(project, display, projects){
         display.innerHTML = '';
         displayProjectButton(projects, display);
 
+    });
+
+    addToDoItemButton.addEventListener('click', () => {
+        toDoForm(project, toDoContainer);
     });
 
 }
