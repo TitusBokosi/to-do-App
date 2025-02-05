@@ -10,6 +10,6 @@ export function createProject(name, description, dueDate){
         toDo.push(item);
         return item;
     }
-    return{name, description, dueDate, createToDoItem};
+    return{name, description, dueDate, createToDoItem, toDo};
 }
 
