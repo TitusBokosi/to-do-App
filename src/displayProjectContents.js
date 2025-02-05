@@ -1,6 +1,7 @@
+import { projectArray } from "./projectButton";
+import { displayProjectButton } from "./displayProjectButton";
 
-
-export function logProject(project, display){
+export function logProject(project, display, projects){
     display.innerHTML = '';
     const projectContainer = document.createElement('div');
     projectContainer.id = 'project-container';
@@ -15,7 +16,30 @@ export function logProject(project, display){
     projectContainer.appendChild(projectDescription);
 
     const projectDueDate = document.createElement('p');
-    projectDueDate.textContent = project.date;
+    projectDueDate.textContent = project.dueDate;
     projectContainer.appendChild(projectDueDate);
+
+    const actionButtons = document.createElement('div');
+    actionButtons.id = 'action-buttons';
+    projectContainer.appendChild(actionButtons);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.id = 'delete-button';
+    deleteButton.textContent = 'delete';
+    deleteButton.style.backgroundColor = 'red';
+    deleteButton.style.color = 'white';
+
+    const addToDoItemButton = document.createElement('button');
+    addToDoItemButton.id = 'add-todo-item-button';
+    addToDoItemButton.textContent = 'add todo item';
+    actionButtons.appendChild(addToDoItemButton);
+    actionButtons.appendChild(deleteButton);
+
+    deleteButton.addEventListener('click', () => {
+        projectArray.splice(projectArray.indexOf(project), 1);
+        display.innerHTML = '';
+        displayProjectButton(projects, display);
+
+    });
 
 }

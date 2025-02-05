@@ -10,7 +10,7 @@ export function displayProjectButton(projects, display){
         projectButton.textContent = project.name;
         projects.appendChild(projectButton);
         projectButton.addEventListener('click', () => {
-            logProject(project, display);
+            logProject(project, display, projects);
         });
     });
 }
